@@ -7,11 +7,19 @@
 
 import Foundation
 
-print("Stick X?")
-let userX = Double(readLine()!) ?? 0
+var userX: Double = 0
+var userY: Double = 0
 
-print("Stick Y?")
-let userY = Double(readLine()!) ?? 0
+do {
+    print("Stick X?")
+    userX = try Double(readLine()!) ?? { throw ErrorCodes.invalidInput }()
+    
+    print("Stick Y?")
+    userY = try Double(readLine()!) ?? { throw ErrorCodes.invalidInput }()
+} catch {
+    print("Error: \(error)")
+    exit(0)
+}
 
 var dummyRobot = Robot.init()
 var dummyStick = Controller.Joystick.init(posX: userX, posY: userY, button: false)
