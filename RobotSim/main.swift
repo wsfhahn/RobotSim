@@ -7,9 +7,15 @@
 
 import Foundation
 
-var dummyRobot = Robot.init()
-var dummyStick = Controller.Joystick.init(posX: 0, posY: 1, button: false)
+print("Stick X?")
+let userX = Double(readLine()!) ?? 0
 
+print("Stick Y?")
+let userY = Double(readLine()!) ?? 0
+
+var dummyRobot = Robot.init()
+var dummyStick = Controller.Joystick.init(posX: userX, posY: userY, button: false)
 dummyStick.printOut()
+
 dummyRobot.setPower(angle: dummyStick.angle, power: dummyStick.magnitude)
 dummyRobot.printOut()
