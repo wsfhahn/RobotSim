@@ -8,12 +8,8 @@
 import Foundation
 
 var dummyRobot = Robot.init()
-var dummyStick = Controller.Joystick.init(posX: 1, posY: 0, button: false)
+var dummyStick = Controller.Joystick.init(posX: 0, posY: 1, button: false)
 
-for _ in 0...1000 {
-    dummyStick.scramble()
-    dummyStick.printOut()
-    
-    dummyRobot.setPower(angle: dummyStick.angle, power: dummyStick.magnitude)
-    dummyRobot.printOut()
-}
+dummyStick.printOut()
+dummyRobot.setPower(angle: dummyStick.angle, power: dummyStick.magnitude)
+dummyRobot.printOut()
