@@ -27,3 +27,5 @@ dummyStick.printOut()
 
 dummyRobot.setPower(angle: dummyStick.angle, power: dummyStick.magnitude)
 dummyRobot.printOut()
+
+print("\(dummyRobot.quad1.velocityVector.0), \(dummyRobot.quad1.velocityVector.1)")
